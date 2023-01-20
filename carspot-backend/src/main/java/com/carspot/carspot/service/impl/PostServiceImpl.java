@@ -27,6 +27,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Post save(Post post) {
+		System.out.println(post);
 		return postRepository.save(post);
 	}
 

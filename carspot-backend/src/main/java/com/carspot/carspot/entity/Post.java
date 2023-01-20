@@ -24,6 +24,8 @@ public class Post implements Serializable {
 	private String postDesc;
 	@Column(name = "img")
 	private String img;
+	@Column(name = "user_fk")
+	private Integer userFk;
 	
 	@Override
 	public boolean equals(Object o) {

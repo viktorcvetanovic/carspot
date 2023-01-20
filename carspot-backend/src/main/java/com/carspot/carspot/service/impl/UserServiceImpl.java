@@ -12,13 +12,16 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public boolean login(String username, String password) {
+    public User login(String username, String password) {
         User savedUser = userRepository.findByUsername(username)
-                .orElseThrow(RuntimeException::new);
-        if (!savedUser.getPassword().equals(password)) {
-            return false;
+                .orElse(null);
+        if(savedUser == null){
+            return null;
         }
-        return true;
+        if (!savedUser.getPassword().equals(password)) {
+            return null;
+        }
+        return savedUser;
     }
 
     @Override

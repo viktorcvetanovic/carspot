@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/login")
+    @GetMapping("/login")
     @ApiOperation(value = "", nickname = "login")
-    public ResponseEntity<Boolean> login(@RequestParam String username, @RequestParam String password) {
+    public ResponseEntity<User> login(@RequestParam String username, @RequestParam String password) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.login(username, password));
     }
 
