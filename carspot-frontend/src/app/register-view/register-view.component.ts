@@ -13,11 +13,11 @@ export class RegisterViewComponent implements OnInit {
   private apiService: ApiServiceService;
   private sessionService: SessionServiceService;
 
-  public name : string | undefined;
-  public username : string | undefined;
-  public password : string | undefined;
+  public name: string | undefined;
+  public username: string | undefined;
+  public password: string | undefined;
 
-  public repeatPassword : string | undefined;
+  public repeatPassword: string | undefined;
 
   constructor(apiService: ApiServiceService, sessionService: SessionServiceService) {
     this.apiService = apiService;
@@ -29,11 +29,11 @@ export class RegisterViewComponent implements OnInit {
 
 
   public register(): void {
-    if(this.password != this.repeatPassword){
+    if (this.password != this.repeatPassword) {
       alert("Your password does not match");
       return;
     }
-    const user  = {
+    const user = {
       id: null,
       firstName: this.name,
       lastName: this.name,
@@ -43,6 +43,7 @@ export class RegisterViewComponent implements OnInit {
     this.apiService.register(user).toPromise()
       .then(data => {
         console.log(data);
+        this.sessionService.registerUser(data);
       });
   }
 

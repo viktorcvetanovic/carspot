@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SessionServiceService} from "../service/session-service.service";
 
 @Component({
   selector: 'app-profile-view',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileViewComponent implements OnInit {
 
-  constructor() { }
+  public currentUser: any;
+  public session: SessionServiceService;
+
+  constructor(session: SessionServiceService) {
+    this.session = session;
+  }
 
   ngOnInit(): void {
+    this.currentUser = this.session.getUserFromSession();
   }
 
 }

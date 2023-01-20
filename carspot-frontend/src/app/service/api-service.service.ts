@@ -17,4 +17,28 @@ export class ApiServiceService {
     });
   }
 
+  public login(username: any, password : any){
+    const params = {
+      username : username,
+      password : password
+    };
+    return this.http.get(`${environment.apiUrl}` + "/user/login" , {
+      responseType: "json",
+      params
+    });
+  }
+
+  public createPost(post: any){
+    console.log(post);
+    return this.http.post(`${environment.apiUrl}` + "/posts" , post,{
+      responseType: "json"
+    });
+  }
+
+  public getAllPosts(){
+    return this.http.get(`${environment.apiUrl}` + "/posts" , {
+      responseType: "json"
+    });
+  }
+
 }

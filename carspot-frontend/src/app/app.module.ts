@@ -13,6 +13,7 @@ import { LoginViewComponent } from './login-view/login-view.component';
 import { RegisterViewComponent } from './register-view/register-view.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
+import { CardComponent } from './feature/card/card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FormsModule} from "@angular/forms";
     PostCreateComponent,
     ProfileViewComponent,
     LoginViewComponent,
-    RegisterViewComponent
+    RegisterViewComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

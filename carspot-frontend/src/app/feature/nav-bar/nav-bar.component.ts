@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {SessionServiceService} from "../../service/session-service.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  public session: SessionServiceService;
+
+  constructor(session: SessionServiceService) {
+    this.session = session;
+  }
 
   ngOnInit(): void {
+
   }
 
 }

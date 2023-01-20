@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ApiServiceService} from "../service/api-service.service";
 
 @Component({
   selector: 'app-post-view',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostViewComponent implements OnInit {
 
-  constructor() { }
+  posts:any= [];
+  apiService: ApiServiceService;
 
-  ngOnInit(): void {
+  constructor(apiService: ApiServiceService) {
+    this.apiService = apiService;
   }
 
+  ngOnInit(): void {
+    this.getAllPosts();
+  }
+
+
+  getAllPosts() {
+    this.apiService.getAllPosts().toPromise().then(data => {
+      console.log(data);
+      this.posts = data;
+    })
+  }
 }

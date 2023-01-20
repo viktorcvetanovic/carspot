@@ -12,19 +12,19 @@
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link bi-watch" [routerLink]="'/post-view'">Watch</a>
+        <a class="nav-link bi-watch" [routerLink]="'/post-view'" *ngIf="session.isLoggedIn()">Watch</a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link bi-p-circle" [routerLink]="'/post-create'" >Create Post </a>
+        <a class="nav-link bi-p-circle" [routerLink]="'/post-create'" *ngIf="session.isLoggedIn()">Create Post </a>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link bi-arrow-down" [routerLink]="'/profile-view'" >Profile</a>
+        <a class="nav-link bi-arrow-down" [routerLink]="'/profile-view'" *ngIf="session.isLoggedIn()">Profile</a>
       </li>
 
       <li class="nav-item active top-100">
-        <a class="nav-link bi-arrow-down-left" href="#">Log out</a>
+        <a class="nav-link bi-arrow-down-left" [routerLink]="'/'" *ngIf="session.isLoggedIn()" (click)="session.removeUser()">Log out</a>
       </li>
     </ul>
     <span class="navbar-text">

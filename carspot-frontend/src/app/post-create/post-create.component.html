@@ -1,11 +1,28 @@
 <app-nav-bar></app-nav-bar>
+
 <form>
-  <div class="form-group">
-    <label for="formGroupExampleInput">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form6Example3" class="form-control" [(ngModel)]="postName" name="postName" />
+    <label class="form-label" for="form6Example3">Post name</label>
   </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <input type="text" id="form6Example4" class="form-control"  [(ngModel)]="postDesc" name="postDesc"/>
+    <label class="form-label" for="form6Example4">Post description</label>
   </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input type="email" id="form6Example5" class="form-control" [(ngModel)]="postImg" name="postImg"/>
+    <label class="form-label" for="form6Example5">Image url</label>
+  </div>
+
+
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4 " (click)="createPost()">Create post</button>
 </form>
