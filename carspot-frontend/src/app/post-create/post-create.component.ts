@@ -36,7 +36,10 @@ export class PostCreateComponent implements OnInit {
     }
 
     this.apiService.createPost(post).toPromise()
-      .then(data => console.log(data));
+      .then(data => {
+        console.log(data)
+        alert("Successfully created post !");
+      });
   }
 
 }

@@ -1,4 +1,6 @@
 <app-nav-bar></app-nav-bar>
-<div *ngFor="let post of posts">
+<div class="d-flex p-1 justify-content-around">
+<div *ngFor="let post of posts" class="height" >
 <app-card [header]="post?.postName" [desc]="post?.postDesc" [img]="post?.img"></app-card>
+</div>
 </div>

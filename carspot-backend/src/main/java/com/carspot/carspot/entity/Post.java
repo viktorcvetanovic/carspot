@@ -1,8 +1,6 @@
 package com.carspot.carspot.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
-import java.time.*;
 import java.util.*;
 import javax.persistence.*;
 import lombok.*;
